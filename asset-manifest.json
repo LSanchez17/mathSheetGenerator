@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mathSheetGenerator/static/css/main.93950c4b.css",
+    "main.js": "/mathSheetGenerator/static/js/main.188ee790.js",
+    "index.html": "/mathSheetGenerator/index.html",
+    "main.93950c4b.css.map": "/mathSheetGenerator/static/css/main.93950c4b.css.map",
+    "main.188ee790.js.map": "/mathSheetGenerator/static/js/main.188ee790.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.93950c4b.css",
+    "static/js/main.188ee790.js"
+  ]
+}
