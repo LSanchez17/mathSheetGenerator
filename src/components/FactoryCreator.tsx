@@ -6,7 +6,8 @@ export const FactoryCreator = ({createArithmetic}) => {
     const [factoryProps, setFactoryProps] = useState({
         numberOfProblems: 0,
         operator: '',
-        skillTier: ''
+        skillTier: '',
+        allowRepeats: false
     });
 
     const handleChange = (e) => {
@@ -51,6 +52,11 @@ export const FactoryCreator = ({createArithmetic}) => {
                 <option value="sTier">{DifficultyTier.sTier}</option>
                 <option value="sPlusTier">{DifficultyTier.sPlusTier}</option>
             </select>
+
+            <div className='repeatsInput'>    
+                <label>Allow Repeat Problems?</label>
+                <input type="checkbox" name="allowRepeats" onChange={handleChange} />
+            </div>
 
             <button onClick={handleClick}>Create Arithmetic Sheet</button>
         </div>

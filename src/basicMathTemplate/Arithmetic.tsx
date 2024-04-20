@@ -1,33 +1,43 @@
+import { AllowRepeats } from './subComputations/AllowRepeats';
+import { AllowNoRepeats } from './subComputations/AllowNoRepeats';
 import { getTier } from '../utils/difficulty'
 import { getOperator } from '../utils/operator'
+import { DifficultyTier } from '../utils/enums';
 import '../css/index.css'
 
-export const Arithmetic = ({ numberOfProblems, operator, skillTier }) => {
-    const TOTAL_MATH_PROBLEMS = numberOfProblems
+export interface ArithmeticProps {
+    numberOfProblems: number;
+    operator: string;
+    skillTier: DifficultyTier;
+    allowRepeats: boolean;
+}
+
+export const Arithmetic = (props: ArithmeticProps) => {
+    const {
+        numberOfProblems,
+        operator,
+        skillTier,
+        allowRepeats
+    } = props
+
     const operatorToUse = getOperator(operator)
     const [startRange, endRange] = getTier(skillTier)
 
     return (
     <>
-        {
-            Array.from({ length: TOTAL_MATH_PROBLEMS }, (_, idx) => {
-                const firstNumber = Math.floor(Math.random() * startRange);
-                const secondNumber = Math.floor(Math.random() * endRange);
-        
-                return (
-                    <div className='numberBlock' key={idx}>
-                        <div className='mathSymbol'>
-                            <span>{operatorToUse}</span>
-                        </div>
-                        <div className='numberArithmeticSection'>
-                            <span>{firstNumber}</span>
-                            <span>{secondNumber}</span>
-                        </div>
-                        <div className='horizontalLine'></div>
-                    </div>
-                );
-            })
-        }
+        {allowRepeats ? 
+            (<AllowRepeats 
+                operatorToUse={operatorToUse}
+                numberOfProblems={numberOfProblems}
+                startRange={startRange}
+                endRange={endRange}
+            />) : 
+            (<AllowNoRepeats 
+                operatorToUse={operatorToUse}
+                numberOfProblems={numberOfProblems}
+                startRange={startRange}
+                endRange={endRange}
+            />)}
     </>
     )
 }

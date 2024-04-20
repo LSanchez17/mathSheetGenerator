@@ -1,9 +1,9 @@
 .mathSheet {
   display: grid;
-  grid-template-columns: repeat(8, 100px);
-  grid-template-rows: repeat(12, 1fr);
-  column-gap: 10px;
-  row-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(1fr, 100px));
+  column-gap: 5px;
+  row-gap: 12px;
 }
 
 .numberBlock {
@@ -44,11 +44,23 @@
   width: 350px;
   display: flex;
   flex-direction: column;
-  row-gap: 5px;
+  row-gap: 15px;
   padding: 10px;
   position: fixed;
   inset: 0px;
   max-width: 100vw;
   max-height: 100dvh;
   margin: auto;
+}
+
+.repeatsInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media print {
+  .printButton {
+    display: none;
+  }
 }
