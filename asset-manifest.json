@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/mathSheetGenerator/static/css/main.93950c4b.css",
-    "main.js": "/mathSheetGenerator/static/js/main.188ee790.js",
+    "main.css": "/mathSheetGenerator/static/css/main.d268233c.css",
+    "main.js": "/mathSheetGenerator/static/js/main.2b175ef0.js",
     "index.html": "/mathSheetGenerator/index.html",
-    "main.93950c4b.css.map": "/mathSheetGenerator/static/css/main.93950c4b.css.map",
-    "main.188ee790.js.map": "/mathSheetGenerator/static/js/main.188ee790.js.map"
+    "main.d268233c.css.map": "/mathSheetGenerator/static/css/main.d268233c.css.map",
+    "main.2b175ef0.js.map": "/mathSheetGenerator/static/js/main.2b175ef0.js.map"
   },
   "entrypoints": [
-    "static/css/main.93950c4b.css",
-    "static/js/main.188ee790.js"
+    "static/css/main.d268233c.css",
+    "static/js/main.2b175ef0.js"
   ]
 }
