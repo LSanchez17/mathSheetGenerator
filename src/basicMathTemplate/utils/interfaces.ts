@@ -3,4 +3,5 @@ export interface MathComputationsProps {
     numberOfProblems: number;
     startRange: number;
     endRange: number;
+    wholeNumberDivision?: boolean;
 }
