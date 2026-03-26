@@ -7,7 +7,8 @@ export const FactoryCreator = ({createArithmetic}) => {
         numberOfProblems: 0,
         operator: '',
         skillTier: '',
-        allowRepeats: false
+        allowRepeats: false,
+        wholeNumberDivision: false
     });
 
     const handleChange = (e) => {
@@ -15,6 +16,14 @@ export const FactoryCreator = ({createArithmetic}) => {
         setFactoryProps({
             ...factoryProps,
             [name]: value
+        });
+    }
+
+    const handleCheckboxChange = (e) => {
+        const { name, checked } = e.target;
+        setFactoryProps({
+            ...factoryProps,
+            [name]: checked
         });
     }
 
@@ -55,8 +64,15 @@ export const FactoryCreator = ({createArithmetic}) => {
 
             <div className='repeatsInput'>    
                 <label>Allow Repeat Problems?</label>
-                <input type="checkbox" name="allowRepeats" onChange={handleChange} />
+                <input type="checkbox" name="allowRepeats" onChange={handleCheckboxChange} />
             </div>
+
+            {factoryProps.operator === '/' && (
+                <div className='repeatsInput'>
+                    <label>Whole Number Quotients Only?</label>
+                    <input type="checkbox" name="wholeNumberDivision" onChange={handleCheckboxChange} />
+                </div>
+            )}
 
             <button onClick={handleClick}>Create Arithmetic Sheet</button>
         </div>

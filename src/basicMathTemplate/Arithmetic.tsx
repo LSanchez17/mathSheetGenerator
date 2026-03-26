@@ -10,6 +10,7 @@ export interface ArithmeticProps {
     operator: string;
     skillTier: DifficultyTier;
     allowRepeats: boolean;
+    wholeNumberDivision?: boolean;
 }
 
 export const Arithmetic = (props: ArithmeticProps) => {
@@ -17,7 +18,8 @@ export const Arithmetic = (props: ArithmeticProps) => {
         numberOfProblems,
         operator,
         skillTier,
-        allowRepeats
+        allowRepeats,
+        wholeNumberDivision
     } = props
 
     const operatorToUse = getOperator(operator)
@@ -31,12 +33,14 @@ export const Arithmetic = (props: ArithmeticProps) => {
                 numberOfProblems={numberOfProblems}
                 startRange={startRange}
                 endRange={endRange}
+                wholeNumberDivision={wholeNumberDivision}
             />) : 
             (<AllowNoRepeats 
                 operatorToUse={operatorToUse}
                 numberOfProblems={numberOfProblems}
                 startRange={startRange}
                 endRange={endRange}
+                wholeNumberDivision={wholeNumberDivision}
             />)}
     </>
     )

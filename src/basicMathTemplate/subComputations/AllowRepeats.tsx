@@ -1,18 +1,26 @@
 import { MathComputationsProps } from "../utils/interfaces";
-import { generateTwoPseudoRandomNumbers } from "../utils/numberGeneration";
+import { generateTwoPseudoRandomNumbers, generateWholeDivisionNumbers } from "../utils/numberGeneration";
+import { Operators } from "../../utils/enums";
 
 export const AllowRepeats = (props: MathComputationsProps) => {
     const {
         operatorToUse,
         numberOfProblems,
         startRange,
-        endRange
+        endRange,
+        wholeNumberDivision
     } = props
 
+    const generateNumbers = () => {
+        if (wholeNumberDivision && operatorToUse === Operators.divide) {
+            return generateWholeDivisionNumbers(startRange, endRange);
+        }
+        return generateTwoPseudoRandomNumbers(startRange, endRange);
+    }
 
     const problemSet = (
         Array.from({ length: numberOfProblems }, (_, idx) => {
-            const [firstNumber, secondNumber] = generateTwoPseudoRandomNumbers(startRange, endRange);
+            const [firstNumber, secondNumber] = generateNumbers();
     
             return (
                 <div className='numberBlock' key={idx}>

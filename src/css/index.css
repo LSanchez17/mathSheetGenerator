@@ -40,7 +40,8 @@
 .factoryInputs {
   background-color: #D8D8D8;
   border-radius: 8px;
-  height: 350px;
+  min-height: 350px;
+  height: auto;
   width: 350px;
   display: flex;
   flex-direction: column;
